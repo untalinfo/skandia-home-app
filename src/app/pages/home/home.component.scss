@@ -13,6 +13,7 @@
     position: fixed;
     height: 80px;
     width: 100%;
+    box-shadow: 0px 0px 6px #00000029;
   }
 
   >.side-bar-home {
@@ -20,11 +21,16 @@
     position: fixed;
     height: 100%;
     width: 50px;
-    background-color: antiquewhite;
+    background-color: $bg-sidebar;
   }
 
   >.main-home {
+    background-image: url(../../../assets/images/bgi-main.png);
     margin: 80px 0 0 50px;
+
+    >.footer-home {
+      width: 100%;
+    }
   }
 }
 

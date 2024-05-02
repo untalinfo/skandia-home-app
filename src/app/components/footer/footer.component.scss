@@ -1,0 +1,49 @@
+@import '../../../shared/theme/colors.scss';
+@import '../../../shared/theme/fonts.scss';
+
+.container-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  border-top-width: 1px;
+  border-top-style: solid;
+  border-top-color: $gray;
+  box-shadow: 0px 0px 6px #00000029;
+  padding: 50px 139px 112px 171px;
+  width: 100%;
+
+  >.left-section {
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;
+
+    >.container-text {
+      >p {
+        @extend .font-description;
+        line-height: 22px;
+        >span {
+          color: $primary;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+
+  >.middle-section {
+    display: flex;
+    flex-direction: column;
+    >a {
+      color: $secondary;
+      line-height: 22px;
+    }
+  }
+
+  >.right-section {
+    display: flex;
+    column-gap: 30px;
+
+    >img {
+      cursor: pointer;
+    }
+  }
+}
