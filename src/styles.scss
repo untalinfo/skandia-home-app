@@ -1,7 +1,23 @@
-/* You can add global styles to this file, and also import other style files */
+@import './shared/theme/fonts.scss';
+@import './shared/theme/colors.scss';
+
+*,
+*:before,
+*:after {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+}
 
 html {
-  margin: 0;
-  box-sizing: border-box;
-  padding: 0;
+  @extend .font-text;
+  font-size: 10px;
+  color: $font-color;
+}
+
+body {
+  @extend .font-text;
+  font-size: 1.3rem;
+  background-color: $bg-color;
 }
