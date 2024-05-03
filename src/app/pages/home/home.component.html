@@ -3,9 +3,9 @@
   <section class="side-bar-home">
     <app-sidebar [expanded]="isSidebarExpanded" />
   </section>
-  <main class="main-home">
+  <main class="main-home" >
     <section>
-      <app-main-section />
+      <app-main-section [cardData]="data" />
     </section>
   </main>
   <footer class="footer-home"><app-footer /></footer>

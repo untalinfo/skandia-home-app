@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { TopCardComponent } from './top-card/top-card.component';
 import { CarouselCardComponent } from './carousel-card/carousel-card.component';
 import { RecommendedCardComponent } from './recommended-card/recommended-card.component';
@@ -12,5 +12,5 @@ import { LastCarouselCardComponent } from './last-carousel-card/last-carousel-ca
   styleUrl: './main-section.component.scss'
 })
 export class MainSectionComponent {
-
+  @Input() cardData: object = [];
 }
