@@ -1,6 +1,8 @@
 <div class="container-home-page">
-  <header class="header-home"><app-header /></header>
-  <section class="side-bar-home">sidebar</section>
+  <header class="header-home"><app-header (toggleSidebar)="toggleSidebar()" /></header>
+  <section class="side-bar-home">
+    <app-sidebar [expanded]="isSidebarExpanded" />
+  </section>
   <main class="main-home">
     <section>
       <app-main-section />
