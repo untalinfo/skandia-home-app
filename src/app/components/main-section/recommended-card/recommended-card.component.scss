@@ -1,0 +1,89 @@
+@import '../../../../shared/theme/colors.scss';
+@import '../../../../shared/theme/fonts.scss';
+
+.recommended-card {
+  @include basic-style-cards;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: all .2s ease-out;
+  width: 352px;
+  height: 399px;
+
+  &:hover {
+    box-shadow: 0px 0px 6px $primary;
+    border: 2px solid $primary;
+  }
+
+  >.container-top-card {
+    display: flex;
+    flex-direction: column;
+    background-image: url(../../../../assets/images/img-recommended-card.png);
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 158px;
+
+    >.top-elements {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px;
+
+      >.text {
+        @extend .font-description;;
+        font-size: 10px;
+        background-color: #C0F3FF;
+        border-radius: 2px;
+        padding: 4px 6px;
+      }
+
+      >.like {
+        color: $primary;
+        font-weight: bold;
+        font-size: 16px;
+      }
+    }
+  }
+
+  >.container-body-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    row-gap: 25px;
+    padding: 16px;
+
+    .decription-text {
+      font-size: 1.8rem;
+      line-height: 2.3rem;
+    }
+
+    >.more-text {
+      color: $primary;
+      font-size: 1.6rem;
+      font-weight: 600;
+    }
+
+    >.footer-text {
+      display: flex;
+      flex-direction: column;
+      row-gap: 12px;
+
+      >.item-text {
+        display: flex;
+        align-items: center;
+        column-gap: 10px;
+      }
+    }
+  }
+
+  >.color-stripe {
+    border-radius: 4px;
+    width: 100%;
+    height: 3px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: #63AABC;
+  }
+}
