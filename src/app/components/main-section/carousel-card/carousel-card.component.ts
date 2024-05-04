@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { dataInterface } from '../../../../shared/interfaces/data';
+import { formatNumberWithDots } from '../../../../shared/helpers/jsFunctions';
 
 @Component({
   selector: 'app-carousel-card',
@@ -9,8 +11,15 @@ import { Component } from '@angular/core';
 })
 export class CarouselCardComponent {
   isSelectedCard: boolean = false;
+  @Input() cardInfo!: dataInterface;
 
   toggleCheckCard(): void {
     this.isSelectedCard = !this.isSelectedCard;
+  }
+
+  constructor() { }
+
+  formatNumber(numberString: string): string {
+    return formatNumberWithDots(numberString);
   }
 }

@@ -20,22 +20,30 @@
       <img src="../../../assets/images/questionGreen.svg" alt="">
     </p>
   </section>
-  <section class="carousel-cards">
-    {{cardData}}
-    <app-carousel-card />
-    <app-carousel-card />
-    <app-last-carousel-card />
-  </section>
+
+  @if(cardDataResults$ | async; as resultObject) {
+    <section class="carousel-cards">
+      @for (itemCard of resultObject.listCard; track itemCard.nameProduct){
+        <app-carousel-card [cardInfo]="itemCard" />
+      }
+      <app-last-carousel-card (toggleExplore)="toggleExplore()" />
+    </section>
+  }
+
   <button class="associate-target-button" >ASOCIAR A OBJETIVO</button>
-  <section class="recommended-products-section">
-    <div class="title-img">
-      <img src="../../../assets/images/Icon awesome-medal.svg" alt="">
-      <p class="container-text">Productos recomendados</p>
-    </div>
-    <p class="text-description">¡Te recomendamos estos <br/> productos para <span class="change-color">Conocer <br/> sobrino!</span></p>
-    <div class="recommended-products-card">
-      <app-recommended-card />
-    </div>
-    <img src="../../../assets/images/leftArrowRecommened.svg" alt="">
-  </section>
+  @if (showRecommendedSection) {
+    <section class="recommended-products-section">
+      <div class="title-img">
+        <img src="../../../assets/images/Icon awesome-medal.svg" alt="">
+        <p class="container-text">Productos recomendados</p>
+      </div>
+      <p class="text-description">¡Te recomendamos estos <br /> productos para <span class="change-color">Conocer <br />
+          sobrino!</span></p>
+      <div class="recommended-products-card">
+        <app-recommended-card />
+      </div>
+      <img src="../../../assets/images/leftArrowRecommened.svg" alt="">
+    </section>
+  }
+
 </div>

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-last-carousel-card',
@@ -8,5 +8,9 @@ import { Component } from '@angular/core';
   styleUrl: './last-carousel-card.component.scss'
 })
 export class LastCarouselCardComponent {
+  @Output() toggleExplore = new EventEmitter<void>();
 
+  onClick(): void {
+    this.toggleExplore.emit();
+  }
 }
