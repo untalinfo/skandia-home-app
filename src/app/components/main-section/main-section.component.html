@@ -28,6 +28,12 @@
       }
       <app-last-carousel-card (toggleExplore)="toggleExplore()" />
     </section>
+  } @else if (errorMessage) {
+    <section class="error-message">
+      <h4>Es imposible cargar tus productos en este momento:</h4>
+      {{errorMessage}}
+      <h5>Por favor comunicate con el equipo de soporte</h5>
+    </section>
   }
 
   <button class="associate-target-button" >ASOCIAR A OBJETIVO</button>
