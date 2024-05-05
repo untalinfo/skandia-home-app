@@ -22,12 +22,13 @@
   </section>
 
   @if(cardDataResults$ | async; as resultObject) {
-    <section class="carousel-cards">
+    <swiper-container class="carousel-cards" slides-per-view="3" speed="500" spaceBetween="5"
+      mousewheel-force-to-axis="true" navigation="true" pagination="true" >
       @for (itemCard of resultObject.listCard; track itemCard.nameProduct){
-        <app-carousel-card [cardInfo]="itemCard" />
+        <swiper-slide><app-carousel-card [cardInfo]="itemCard" /></swiper-slide>
       }
-      <app-last-carousel-card (toggleExplore)="toggleExplore()" />
-    </section>
+      <swiper-slide><app-last-carousel-card (toggleExplore)="toggleExplore()" /></swiper-slide>
+    </swiper-container>
   } @else if (errorMessage) {
     <section class="error-message">
       <h4>Es imposible cargar tus productos en este momento:</h4>

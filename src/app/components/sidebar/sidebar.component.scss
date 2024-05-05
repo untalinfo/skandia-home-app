@@ -3,7 +3,6 @@
 .sidebar-page {
   display: flex;
   flex-direction: column;
-
   
   >.item {
     display: flex;
@@ -11,6 +10,7 @@
     column-gap: 17px;
     padding: 17px;
     cursor: pointer;
+    transition: all .2s ease-in-out;
 
     >.img-icon {
       width: 16px;
@@ -27,6 +27,10 @@
       >.text-item {
         color: $white;
       }
+    }
+
+    &:hover {
+      background-color: tint($primary, 70);
     }
   }
 }
