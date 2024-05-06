@@ -79,6 +79,11 @@
       align-items: center;
       column-gap: 8px;
     }
+
+    @include small-view {
+      width: 95%;
+      text-align: center;
+    }
   }
 
   >.carousel-cards {
@@ -137,6 +142,10 @@
         padding: 5px 3px;
         margin-top: 20px;
       }
+      
+      @include small-view {
+        display: none;
+      }
     }
 
     >.text-description {
@@ -146,6 +155,11 @@
       >.change-color {
         color: $tertiary;
       }
+    }
+
+    @include small-view {
+      flex-direction: column;
+      height: auto;
     }
   }
 }
