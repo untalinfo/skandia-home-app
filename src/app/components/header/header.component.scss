@@ -1,0 +1,91 @@
+@import '../../../shared/theme/colors.scss';
+@import '../../../shared/theme/fonts.scss';
+
+.container-header {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+
+  >.container-sections {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+
+    >.left-section,
+      >.right-section {
+        display: flex;
+        align-items: center;
+    
+        >.separator {
+          background-color: $secondary;
+          width: 2px;
+          height: 28px;
+          margin: 0 13px;
+        }
+      }
+
+    >.left-section {
+      margin-left: 100px;
+      >.text {
+        font-size: 1.8rem;
+      }
+    }
+    
+      >.right-section {
+        column-gap: 20px;
+        margin-right: 124px;
+    
+        >.nav-element {
+          display: flex;
+          align-items: center;
+          column-gap: 8px;
+    
+          >.icon-image {
+            height: 24px;
+            width: 24px;
+          }
+    
+          >.header-link {
+            @extend .font-description;
+            color: $primary;
+            font-weight: bold;
+          }
+        }
+    
+        >.nav-questions {
+          >.icon-image {
+            height: 32px;
+            width: 32px;
+            transition: all .3s ease-in-out;
+          }
+    
+          >.questions-text {
+            display: none;
+            transition: all .3s ease-in-out;
+          }
+    
+          &:hover {
+            >.icon-image {
+              height: 24px;
+              width: 24px;
+            }
+    
+            >.questions-text {
+              display: flex;
+            }
+          }
+        }
+      }
+
+    @include small-view {
+      flex-direction: column;
+      >.left-section, >.right-section {
+        margin: 0;
+      }
+    }
+  }
+}

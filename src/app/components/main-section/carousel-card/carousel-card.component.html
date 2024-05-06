@@ -1,0 +1,17 @@
+<div class="carousel-card">
+  <div class="checkbox {{isSelectedCard && 'checked'}}" (click)="toggleCheckCard()" ></div>
+  <div class="main-body-card">
+    <p class="product-name">{{cardInfo.nameProduct}}</p>
+    <p class="product-number">#{{cardInfo.numberProduct}}</p>
+    <hr class="separator">
+    <div class="balance-account">
+      <p class="text">Ya cuentas con:</p>
+      <p class="value">${{ formatNumber(cardInfo.balanceProduct)}}</p>
+    </div>
+  </div>
+  <div class="container-description">
+    <img src="../../../../assets/images/Happy.svg" alt="" class="icon-image"/>
+    <p class="text-description">{{cardInfo.detaildProduct}}</p>
+  </div>
+  <div class="color-stripe"></div>
+</div>

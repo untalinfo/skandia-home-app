@@ -1,0 +1,47 @@
+@mixin small-view {
+  @media (max-width: 576px) {
+    @content;
+  }
+}
+
+@mixin medium-view {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin large-view {
+  @media (min-width: 992px) {
+    @content;
+  }
+}
+
+@function shade($color, $percentage) {
+  @return mix(black, $color, $percentage);
+}
+
+@function tint($color, $percentage) {
+  @return mix(white, $color, $percentage);
+}
+
+@mixin tint-value($className, $colorName, $property, $color, $through: 4, $steps: 20) {
+  @for $i from 1 through $through {
+    .#{$className}-#{$colorName}-#{$i}00t {
+      #{$property}: tint($color, 100 - ($i * $steps));
+    }
+  }
+}
+
+@mixin shade-value($className, $colorName, $property, $colorVariable) {
+  @for $i from 6 through 9 {
+    .#{$className}-#{$colorName}-#{$i}00s {
+      #{$property}: shade($colorVariable, ($i - 5) * 20);
+    }
+  }
+}
+
+@mixin basic-style-cards {
+  background-color: $white;
+  box-shadow: 0px 0px 6px #00000029;
+  border-radius: 4px;
+}

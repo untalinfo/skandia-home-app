@@ -1,0 +1,16 @@
+<div class="sidebar-page">
+  <!-- <span>hola {{expanded}}</span> -->
+  @for (item of sidebarItems; track item.iconUrl){
+    @if (expanded) {
+      <div class="item" (click)="expanded = !expanded">
+        <img src={{item.iconUrl}} alt='icon' class="img-icon" />
+        <p class="text-item">{{item.text}}</p>
+        
+      </div>
+    } @else if(item.text === 'Inicio'){
+      <div class="item" (click)="expanded = !expanded">
+        <img src={{item.iconUrl}} alt='icon' class="img-icon" />
+      </div>
+    }
+  }
+</div>

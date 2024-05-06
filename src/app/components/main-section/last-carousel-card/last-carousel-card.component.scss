@@ -1,0 +1,40 @@
+@import '../../../../shared/theme/colors.scss';
+@import '../../../../shared/theme/fonts.scss';
+
+.recommended-card {
+  @include basic-style-cards;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: all .2s ease-out;
+  width: 352px;
+  height: 399px;
+  background-image: url(../../../../assets/images/bgLastCard.png);
+  background-size: cover;
+  background-position: center;
+
+  >.container-explore-now {
+    background-color: $primary;
+    border-radius: 18px;
+    padding: 12px;
+    width: max-content;
+    margin: 150px 20px;
+    cursor: pointer;
+
+    >p {
+      font-size: 1.4rem;
+      color: $white;
+      font-weight: bold;
+    }
+  }
+
+  >.color-stripe {
+    border-radius: 4px;
+    width: 100%;
+    height: 3px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: #FF9460;
+  }
+}

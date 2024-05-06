@@ -1,0 +1,56 @@
+<div class="container-main-section">
+  <section class="top-section">
+    <div class="go-home">
+      <img src="../../../assets/images/home.svg" alt="">
+      <a href="">Ir al inicio</a>
+    </div>
+    <div class="title-page">
+      <p class="title">¡Tu objetivo ha sido agregado exitosamente!</p>
+      <p class="subtitle">¡Te hemos enviado un correo con la notificación!</p>
+    </div>
+    <div>
+      <app-top-card />
+    </div>
+  </section>
+  <section class="middle-text">
+    <p class="title">¡Vamos por esos <span>$6.000.000</span> para <span>Conocer mi sobrino</span>!</p>
+    <p class="subtitle">¡A través de tus productos y nuestros rendimientos podriamos logarlo!</p>
+    <p class="associate-text">
+      Asocia tus productos o adquiere uno nuevo.
+      <img src="../../../assets/images/questionGreen.svg" alt="">
+    </p>
+  </section>
+
+  @if(cardDataResults$ | async; as resultObject) {
+    <swiper-container class="carousel-cards" slides-per-view="3" speed="500" spaceBetween="5"
+      mousewheel-force-to-axis="true" navigation="true" pagination="true" >
+      @for (itemCard of resultObject.listCard; track itemCard.nameProduct){
+        <swiper-slide><app-carousel-card [cardInfo]="itemCard" /></swiper-slide>
+      }
+      <swiper-slide><app-last-carousel-card (toggleExplore)="toggleExplore()" /></swiper-slide>
+    </swiper-container>
+  } @else if (errorMessage) {
+    <section class="error-message">
+      <h4>Es imposible cargar tus productos en este momento:</h4>
+      {{errorMessage}}
+      <h5>Por favor comunicate con el equipo de soporte</h5>
+    </section>
+  }
+
+  <button class="associate-target-button" >ASOCIAR A OBJETIVO</button>
+  @if (showRecommendedSection) {
+    <section class="recommended-products-section">
+      <div class="title-img">
+        <img src="../../../assets/images/Icon awesome-medal.svg" alt="">
+        <p class="container-text">Productos recomendados</p>
+      </div>
+      <p class="text-description">¡Te recomendamos estos <br /> productos para <span class="change-color">Conocer <br />
+          sobrino!</span></p>
+      <div class="recommended-products-card">
+        <app-recommended-card />
+      </div>
+      <img src="../../../assets/images/leftArrowRecommened.svg" alt="">
+    </section>
+  }
+
+</div>
